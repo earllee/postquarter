@@ -1,0 +1,14 @@
+Name: {{input value=name name='name'}}
+Sport: {{input value=sport name='sport'}}
+Sex: {{input value=sex name='sex'}}
+
+<button {{action 'save'}}>Add team</button>
+
+<hr>
+<ul>
+{{#each teams key="@index" as |team|}}
+<li>{{team.name}} | {{team.teamGender}} | {{team.sport}} </li>
+{{/each}}
+</ul>
+
+{{outlet}}
