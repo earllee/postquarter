@@ -16,4 +16,5 @@ export default DS.Model.extend({
     var map = ['Men\'s', 'Women\'s', 'Co-Ed'];
     return map[this.get('sex')];
   }.property('sex')
+
 });
