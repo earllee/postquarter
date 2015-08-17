@@ -36,11 +36,19 @@
     "dataSource": "psqlDs",
     "public": true
   },
+  "TeamMember": {
+    "dataSource": "psqlDs",
+    "public": true
+  },
   "Workout": {
     "dataSource": "psqlDs",
     "public": true
   },
   "Person": {
+    "dataSource": "psqlDs",
+    "public": true
+  },
+  "Set": {
     "dataSource": "psqlDs",
     "public": true
   }

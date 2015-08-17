@@ -1,0 +1,45 @@
+{
+  "name": "Set",
+  "plural": "Sets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "exercise": {
+      "type": "string",
+      "required": true
+    },
+    "weight": {
+      "type": "number",
+      "required": true
+    },
+    "resistance": {
+      "type": "string"
+    },
+    "reps": {
+      "type": "number",
+      "required": true
+    },
+    "tempo": {
+      "type": [
+        "number"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Workout": {
+      "type": "belongsTo",
+      "model": "Workout",
+      "foreignKey": "workoutId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

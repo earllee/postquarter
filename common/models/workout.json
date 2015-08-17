@@ -12,7 +12,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "Sets": {
+      "type": "hasMany",
+      "model": "Set",
+      "foreignKey": "setId"
+    }
+  },
   "acls": [],
   "methods": []
 }

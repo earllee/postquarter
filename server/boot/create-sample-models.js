@@ -25,4 +25,11 @@ module.exports = function(app) {
     if (err) throw err;
   });
 
+  app.dataSources.psqlDs.autoupdate('TeamMember', function(err) {
+    if (err) throw err;
+  });
+
+  app.dataSources.psqlDs.autoupdate('Workout', function(err) {
+    if (err) throw err;
+  });
 };
