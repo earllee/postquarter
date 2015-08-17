@@ -21,4 +21,8 @@ module.exports = function(app) {
 
   });
 
+  app.dataSources.psqlDs.autoupdate('Person', function(err) {
+    if (err) throw err;
+  });
+
 };

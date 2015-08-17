@@ -19,7 +19,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "People": {
+      "type": "hasMany",
+      "model": "Person",
+      "foreignKey": "teamId",
+      "through": "TeamMember"
+    }
+  },
   "acls": [],
   "methods": []
 }

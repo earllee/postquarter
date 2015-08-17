@@ -14,7 +14,7 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "psqlDs"
   },
   "AccessToken": {
     "dataSource": "db",
@@ -37,6 +37,10 @@
     "public": true
   },
   "Workout": {
+    "dataSource": "psqlDs",
+    "public": true
+  },
+  "Person": {
     "dataSource": "psqlDs",
     "public": true
   }
