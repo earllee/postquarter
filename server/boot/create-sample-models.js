@@ -1,5 +1,7 @@
 module.exports = function(app) {
 
+  // autoupdate() sets up the table in Postgres. It will not overwrite existing
+  // tables or rows.
   app.dataSources.psqlDs.autoupdate('Team', function(err) {
     if (err) throw err;
 
@@ -30,6 +32,10 @@ module.exports = function(app) {
   });
 
   app.dataSources.psqlDs.autoupdate('Workout', function(err) {
+    if (err) throw err;
+  });
+
+  app.dataSources.psqlDs.autoupdate('Set', function(err) {
     if (err) throw err;
   });
 };
