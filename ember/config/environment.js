@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'postquarter-client',
+    modulePrefix: 'postquarter',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

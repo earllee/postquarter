@@ -1,6 +1,6 @@
 
 import DS from 'ember-data';
-import config from 'postquarter-client/config/environment';
+import config from 'postquarter/config/environment';
 
 export default DS.RESTAdapter.extend({
   'host': config.apihost,
