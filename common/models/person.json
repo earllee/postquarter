@@ -35,6 +35,11 @@
       "model": "Team",
       "foreignKey": "personId",
       "through": "TeamMember"
+    },
+    "Workouts": {
+      "type": "hasMany",
+      "model": "Workout",
+      "foreignKey": "workoutId"
     }
   },
   "acls": [],

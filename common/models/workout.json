@@ -17,6 +17,11 @@
       "type": "hasMany",
       "model": "Set",
       "foreignKey": "setId"
+    },
+    "Person": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": "personId"
     }
   },
   "acls": [],
