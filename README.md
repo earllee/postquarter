@@ -4,5 +4,5 @@ PostQuarter is a web application with a text messaging service, iOS application,
 
 PostQuarter aims to solve the problem of near-blind decision making in competitive sports when it comes to athletic performance.
 
-- LoopBack at the top-level.
+- Rails subdirectory contains Rails app for API
 - Ember sub-directory contains Ember CLI app.
