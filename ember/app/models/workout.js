@@ -7,7 +7,7 @@ export default DS.Model.extend({
 
   user:                 DS.belongsTo('user'),
   team:                 DS.belongsTo('team'),
-  sets:                 DS.hasMany('set'),
+  realSets:             DS.hasMany('realSet'),
   workoutTemplate:      DS.belongsTo('workoutTemplate'),
 
   difference: Ember.computed(function() {

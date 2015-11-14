@@ -4,7 +4,7 @@ export default DS.Model.extend({
   name:         DS.attr('string'),
   association:  DS.attr('string'),
   sport:        DS.attr('string'),
-  sponsor:      DS.attr('string')
+  sponsor:      DS.attr('string'),
   sex:          DS.attr('string'),
 
   // Converts encoded sex, int, to sex

@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
         'name': this.get('name'),
         'sport': this.get('sport'),
         'sex': parseInt(this.get('sex')),
-      }
+      };
 
       var team = this.store.createRecord('team', teamData);
       team.save();
