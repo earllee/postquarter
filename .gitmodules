@@ -1,0 +1,6 @@
+[submodule "ember"]
+	path = ember
+	url = git@github.com:earllee/PostQuarter-Ember.git
+[submodule "rails"]
+	path = rails
+	url = git@github.com:earllee/PostQuarter-Rails.git
