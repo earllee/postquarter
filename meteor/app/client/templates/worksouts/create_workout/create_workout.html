@@ -1,0 +1,10 @@
+<template name="CreateWorkout">
+  <h1>Create Workout</h1>
+    {{# autoForm collection="Workouts" doc=this id="editWorkoutForm" type="insert"}}
+      {{> afQuickField name="name"}}
+      {{> afQuickField name="date"}}
+      {{> afQuickField name="feeling"}}
+      {{> afQuickField name="notes" rows=5}}
+      <button type="create" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+</template>

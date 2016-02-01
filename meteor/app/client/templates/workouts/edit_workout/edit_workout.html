@@ -1,0 +1,14 @@
+<template name="EditWorkout">
+  <div class="edit-workout">
+    <h1>Edit Workout</h1>
+    {{# autoForm collection="Workouts" doc=this id="editWorkoutForm" type="update"}}
+      {{> afQuickField name="name"}}
+      {{> afQuickField name="date"}}
+      {{> afQuickField name="feeling"}}
+      {{> afQuickField name="notes" rows=5}}
+      <button type="update" class="btn btn-primary">Update</button>
+      {{> quickRemoveButton collection="Workouts" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
+    {{/autoForm}}
+    <hr>
+  </div>
+</template>

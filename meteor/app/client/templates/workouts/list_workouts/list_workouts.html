@@ -1,0 +1,25 @@
+<template name="ListWorkouts">
+  <div class="list-workouts">
+    <h1>Workouts</h1>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Feeling</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each workouts}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{date}}</td>
+          <td>{{feeling}}</td>
+          <td>{{#linkTo route='editWorkout'}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
