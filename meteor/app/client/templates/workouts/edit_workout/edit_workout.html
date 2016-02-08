@@ -5,10 +5,21 @@
       {{> afQuickField name="name"}}
       {{> afQuickField name="date"}}
       {{> afQuickField name="feeling"}}
+      {{> afQuickField name="sets"}}
       {{> afQuickField name="notes" rows=5}}
       <button type="update" class="btn btn-primary">Update</button>
       {{> quickRemoveButton collection="Workouts" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
     {{/autoForm}}
     <hr>
+      <h2>Sets</h2>
+      {{# autoForm collection="Sets" doc=newSetDefaultValues id="createSetForm" type="insert"}}
+        {{> afQuickField name="exercise"}}
+        {{> afQuickField name="rest"}}
+        {{> afQuickField name="reps"}}
+        {{> afQuickField name="resistance"}}
+        {{> afQuickField name="resistanceType" options="allowed"}}
+        {{> afQuickField name="_workout" defaultValue=this._id type="hidden"}}
+        <button type="insert" class="btn btn-primary">Insert</button>
+      {{/autoForm}}
   </div>
 </template>

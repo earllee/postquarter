@@ -22,6 +22,10 @@ Workouts.attachSchema(new SimpleSchema({
     type: String,
     label: 'Notes',
     optional: true
+  },
+  sets: {
+    type: [String],
+    label: 'Sets'
   }
 }));
 

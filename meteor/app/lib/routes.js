@@ -31,3 +31,10 @@ Router.route('/workouts/:_id', {
   action: 'edit',
   where: 'client'
 });
+
+Router.route('/sets/create', {
+  name: 'createSet',
+  controller: 'SetsController',
+  action: 'create',
+  where: 'client'
+});
