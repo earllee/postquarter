@@ -1,5 +1,6 @@
 Workouts = new Mongo.Collection('workouts');
 
+// Workouts Schema
 Workouts.attachSchema(new SimpleSchema({
   name: {
     type: String,
@@ -23,12 +24,14 @@ Workouts.attachSchema(new SimpleSchema({
     label: 'Notes',
     optional: true
   },
-  sets: {
+  // Arrays of IDs should be prefixed with a '_'
+  _sets: {
     type: [String],
     label: 'Sets'
   }
 }));
 
+// Allow server-side publishing
 if (Meteor.isServer) {
   Workouts.allow({
     insert: function (userId, doc) {

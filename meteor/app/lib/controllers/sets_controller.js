@@ -6,6 +6,8 @@ SetsController = RouteController.extend({
   // this.subscribe('item', this.params._id).wait();
 
   subscriptions: function() {
+    this.subscribe('workouts');
+    this.subscribe('sets');
   },
 
   // Subscriptions or other things we want to "wait" on. This also

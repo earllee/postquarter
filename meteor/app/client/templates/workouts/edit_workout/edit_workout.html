@@ -12,7 +12,7 @@
     {{/autoForm}}
     <hr>
       <h2>Sets</h2>
-      {{# autoForm collection="Sets" doc=newSetDefaultValues id="createSetForm" type="insert"}}
+      {{# autoForm collection="Sets" doc=this id="createSetForm" type="insert"}}
         {{> afQuickField name="exercise"}}
         {{> afQuickField name="rest"}}
         {{> afQuickField name="reps"}}

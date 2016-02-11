@@ -1,6 +1,14 @@
 <template name="CreateSet">
   <div class="create-set">
     <h1>Create Set</h1>
-    {{> quickForm collection="Sets" doc=this id="createSetForm" type="insert"}}
+    {{# autoForm collection="Sets" id="createSetForm" type="insert"}}
+      {{> afQuickField name="exercise"}}
+      {{> afQuickField name="rest"}}
+      {{> afQuickField name="reps"}}
+      {{> afQuickField name="resistance"}}
+      {{> afQuickField name="resistanceType" options="allowed"}}
+      {{> afQuickField name="_workout" options=workoutIds}}
+      <button type="insert" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
   </div>
 </template>

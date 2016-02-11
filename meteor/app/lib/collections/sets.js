@@ -1,5 +1,6 @@
 Sets = new Mongo.Collection('sets');
 
+// Schema
 Sets.attachSchema(new SimpleSchema({
   exercise: {
     type: String,
@@ -21,14 +22,31 @@ Sets.attachSchema(new SimpleSchema({
   resistanceType: {
     type: String,
     label: 'Resistance Type',
+    defaultValue: 'lbs',
     allowedValues: ['lbs', 'kgs']
   },
+  // Arrays of IDs should be prefixed with a '_'
   _workout: {
     type: String,
     label: 'Workout ID',
     optional: true
   }
 }));
+
+// Callbacks
+
+// Add Set to Workout - to 1:N Workout:Set relationship
+Sets.after.insert(function(userId, doc) {
+  Workouts.update({ _id: doc._workout }, { $push: { _sets: this._id } }, function(err, res) {
+    // Delete Set if we fail to associate with Workout
+    if (err) {
+      Sets.removeOne({ _id: this._id })
+      console.log('Failed to add set ID to workout for some reason.')
+    }
+
+    return res;
+  });
+});
 
 if (Meteor.isServer) {
   Sets.allow({

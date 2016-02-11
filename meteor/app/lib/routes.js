@@ -11,6 +11,9 @@ Router.route('/', {
   where: 'client'
 });
 
+/*
+ * Workouts Routes
+ */
 Router.route('/workouts/create', {
   name: 'createWorkout',
   controller: 'WorkoutsController',
@@ -32,6 +35,9 @@ Router.route('/workouts/:_id', {
   where: 'client'
 });
 
+/*
+ * Sets Routes
+ */
 Router.route('/sets/create', {
   name: 'createSet',
   controller: 'SetsController',
