@@ -31,6 +31,13 @@ Workouts.attachSchema(new SimpleSchema({
   }
 }));
 
+// Callbacks
+
+Workouts.after.findOne(function(userId, selector, options, doc) {
+  if (!doc || !doc._sets) return;
+  doc.sets = Sets.find({ _id: { $in: doc._sets } }).fetch();
+});
+
 // Allow server-side publishing
 if (Meteor.isServer) {
   Workouts.allow({
