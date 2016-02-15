@@ -10,13 +10,20 @@
       {{> quickRemoveButton collection="Workouts" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
     {{/autoForm}}
     <hr>
-    <ol>
-      {{#each this.sets}}
-        <li>{{this.exercise}} - {{this.reps}} reps ({{this.resistance}} {{this.resistanceType}}) | {{this._workout}}</li>
-      {{/each}}
-    </ol>
-    <hr>
     <h2>Sets</h2>
+    {{#each set in sets}}
+      {{# autoForm collection="Sets" doc=set id=set._id type="update"}}
+        {{> afQuickField name="exercise"}}
+        <div class="form-inline">
+        {{> afQuickField name="reps"}}
+        {{> afQuickField name="resistance"}}
+        {{> afQuickField name="resistanceType" defaultValue="lbs" options="allowed"}}
+      </div>
+        <button type="update" class="btn btn-primary">Update</button>
+        {{> quickRemoveButton collection="Sets" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
+      {{/autoForm}}
+      <br>
+    {{/each}}
     {{# autoForm collection="Sets" doc=this id="createSetForm" type="insert"}}
       {{> afQuickField name="exercise"}}
       {{> afQuickField name="reps"}}
@@ -25,7 +32,7 @@
 
       {{! Attaches proper workout ID by including a hidden field with the workout ID by default - note that this can be hacked }}
       {{> afQuickField name="_workout" defaultValue=this._id type="hidden"}}
-      <button type="insert" class="btn btn-primary">Insert</button>
+      <button type="insert" class="btn btn-primary">Add Set</button>
     {{/autoForm}}
   </div>
 </template>

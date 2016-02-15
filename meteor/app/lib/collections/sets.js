@@ -23,7 +23,7 @@ Sets.attachSchema(new SimpleSchema({
     type: String,
     label: 'Resistance Type',
     defaultValue: 'lbs',
-    allowedValues: ['lbs', 'kgs']
+    allowedValues: ['lbs', 'kgs', '% max']
   },
   // Arrays of IDs should be prefixed with a '_'
   _workout: {

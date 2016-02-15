@@ -31,11 +31,11 @@ Workouts.attachSchema(new SimpleSchema({
   }
 }));
 
-// Callbacks
-
-Workouts.after.findOne(function(userId, selector, options, doc) {
-  if (!doc || !doc._sets) return;
-  doc.sets = Sets.find({ _id: { $in: doc._sets } }).fetch();
+// Helpers
+Workouts.helpers({
+  sets: function() {
+    return Sets.find({ _id: { $in: this._sets } });
+  }
 });
 
 // Allow server-side publishing
