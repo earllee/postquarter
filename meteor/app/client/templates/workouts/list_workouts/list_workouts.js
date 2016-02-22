@@ -9,7 +9,7 @@ Template.ListWorkouts.events({
 /*****************************************************************************/
 Template.ListWorkouts.helpers({
   workouts: function() {
-    return Workouts.find();
+    return Workouts.find({ createdBy: Meteor.userId() });
   }
 });
 

@@ -27,7 +27,14 @@ Workouts.attachSchema(new SimpleSchema({
   // Arrays of IDs should be prefixed with a '_'
   _sets: {
     type: [String],
-    label: 'Sets'
+    label: 'Sets',
+    optional: true
+  },
+  createdBy: {
+    type: String,
+    autoValue: function () { return Meteor.userId(); },
+    denyUpdate: true,
+    optional: true
   }
 }));
 
@@ -36,6 +43,11 @@ Workouts.helpers({
   sets: function() {
     return Sets.find({ _id: { $in: this._sets } });
   }
+});
+
+// Hooks
+Workouts.before.insert(function(userId, doc) {
+  doc.createdBy = userId;
 });
 
 // Allow server-side publishing

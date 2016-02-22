@@ -21,7 +21,7 @@ Sets.attachSchema(new SimpleSchema({
   },
   resistanceType: {
     type: String,
-    label: 'Resistance Type',
+    label: 'Unit',
     defaultValue: 'lbs',
     allowedValues: ['lbs', 'kgs', '% max']
   },
@@ -29,6 +29,12 @@ Sets.attachSchema(new SimpleSchema({
   _workout: {
     type: String,
     label: 'Workout ID',
+    optional: true
+  },
+  createdBy: {
+    type: String,
+    autoValue: function () { return Meteor.userId(); },
+    denyUpdate: true,
     optional: true
   }
 }));

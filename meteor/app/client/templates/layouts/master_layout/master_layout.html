@@ -13,9 +13,15 @@
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav navbar-right">
           <li>{{#linkTo route="home"}}Home{{/linkTo}}</li>
-          <li>{{#linkTo route="workoutsList"}}Workouts{{/linkTo}}</li>
-          <li>{{#linkTo route="createWorkout"}}Log Workout{{/linkTo}}</li>
-          <li>{{#linkTo route="createSet"}}Create Set{{/linkTo}}</li>
+          {{#if currentUser}}
+            <li>{{#linkTo route="workoutsList"}}Workouts{{/linkTo}}</li>
+            <li>{{#linkTo route="createWorkout"}}Log Workout{{/linkTo}}</li>
+            <li>{{#linkTo route="createSet"}}Create Set{{/linkTo}}</li>
+            <li><a href="#" class="logout">Logout</a></li>
+          {{else}}
+            <li>{{#linkTo route="register"}}Register{{/linkTo}}</li>
+            <li>{{#linkTo route="login"}}Log In{{/linkTo}}</li>
+          {{/if}}
         </ul>
       </div>
     </div>
